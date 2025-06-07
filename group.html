@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+    }
+
+    header {
+      background-color: #2a9d8f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .course {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .course h2 {
+      margin: 0;
+      color: #264653;
+    }
+
+    .description {
+      display: none;
+      margin-top: 0.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d65a3a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Course</h1>
+  </header>
+
+  <main>
+    <section id="courses">
+      <div class="course">
+        <h2>Web Development</h2>
+        <p class="description">Learn HTML, CSS, and JavaScript to build websites.</p>
+        <button onclick="toggleDescription(this)">Show More</button>
+      </div>
+
+      <div class="course">
+        <h2>Python Programming</h2>
+        <p class="description">Master Python for automation, data science, and more.</p>
+        <button onclick="toggleDescription(this)">Show More</button>
+      </div>
+
+      <div class="course">
+        <h2>UI/UX Design</h2>
+        <p class="description">Understand design principles and user experience.</p>
+        <button onclick="toggleDescription(this)">Show More</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleDescription(button) {
+      const description = button.previousElementSibling;
+      const isVisible = description.style.display === "block";
+      description.style.display = isVisible ? "none" : "block";
+      button.textContent = isVisible ? "Show More" : "Show Less";
+    }
+  </script>
+</body>
+</html>
